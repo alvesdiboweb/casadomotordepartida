@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa do Motor de Arranque | Motores de Partida e Alternadores em Santana de Parnaíba</title>
+  
+  <!-- Fontes Automotivas & Técnicas Modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* VARIÁVEIS DE DESIGN AUTOMOTIVO E ELÉTRICO INDUSTRIAL */
+    :root {
+      --auto-dark: #0d1117;          /* Grafite profundo estilo oficina premium */
+      --auto-surface: #161b22;       /* Superfície de cartões e blocos */
+      --auto-surface-hover: #1f2633; /* Hover refinado */
+      --electric-amber: #ffb800;     /* Amarelo raio elétrico de alta visibilidade */
+      --electric-amber-glow: rgba(255, 184, 0, 0.35);
+      --electric-blue: #0284c7;      /* Azul elétrico técnico */
+      --electric-blue-light: #38bdf8;
+      --industrial-silver: #94a3b8;  /* Cinza metálico para textos secundários */
+      --text-white: #f8fafc;         /* Branco puro para títulos */
+      --border-metallic: rgba(148, 163, 184, 0.16);
+      --border-glow: rgba(255, 184, 0, 0.4);
+      --wa-green: #25d366;           /* Verde oficial do WhatsApp */
+      --wa-green-hover: #1ebd5a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--auto-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 10% 40%, rgba(255, 184, 0, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, #0d1117 0%, #080b0e 100%);
+      color: var(--text-white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .brand-title, .badge-electric {
+      font-family: 'Chakra Petch', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* BARRA SUPERIOR DE ALERTA E SOCORRO RÁPIDO */
+    .emergency-bar {
+      background: linear-gradient(90deg, #991b1b 0%, #b91c1c 50%, #991b1b 100%);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 9px 15px;
+      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid var(--electric-amber);
+    }
+
+    .emergency-bar .pulse-dot {
+      width: 9px;
+      height: 9px;
+      background-color: var(--electric-amber);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--electric-amber);
+      animation: blink 1.2s infinite ease-in-out;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.8); }
+    }
+
+    /* CABEÇALHO COM LOGO METÁLICA */
+    header {
+      background-color: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-metallic);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      padding: 14px 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand-icon-shield {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 2px solid var(--electric-amber);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--electric-amber-glow);
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.1;
+    }
+
+    .brand-title span {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--electric-amber);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--industrial-silver);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.25s ease;
+      position: relative;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--electric-amber);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background-color: var(--electric-amber);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* BOTÕES GERAIS */
+    .btn-wa {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--wa-green) 0%, #128c7e 100%);
+      color: #ffffff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+      background: linear-gradient(135deg, var(--wa-green-hover) 0%, #159c8c 100%);
+    }
+
+    .btn-amber {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffb800 0%, #e09900 100%);
+      color: #0b0f15;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      padding: 13px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(255, 184, 0, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .btn-amber:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(255, 184, 0, 0.55);
+      background: linear-gradient(135deg, #ffc526 0%, #f0a300 100%);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 55px 0 70px 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 5.2fr 4.8fr;
+      }
+    }
+
+    .badge-electric {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 184, 0, 0.1);
+      border: 1px solid var(--electric-amber);
+      color: var(--electric-amber);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      color: var(--text-white);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 .highlight-amber {
+      color: var(--electric-amber);
+      text-shadow: 0 0 25px var(--electric-amber-glow);
+    }
+
+    .lead-text {
+      color: var(--industrial-silver);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 25px;
+    }
+
+    .stats-pills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .stat-pill {
+      background: var(--auto-surface);
+      border: 1px solid var(--border-metallic);
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .stat-pill .num {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--electric-amber);
+      display: block;
+    }
+
+    .stat-pill .label {
+      font-size: 0.72rem;
+      color: var(--industrial-silver);
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    /* HERO CONVERSION BOX */
+    .action-box {
+      background: var(--auto-surface);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 184, 0, 0.1);
+      position: relative;
+    }
+
+    .action-box-title {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.2rem;
+      color: var(--electric-amber);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .urgency-alert {
+      background: rgba(2, 132, 199, 0.12);
+      border-left: 4px solid var(--electric-blue-light);
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    /* GALERIA DA PEÇA COM TROCA VISUAL */
+    .gallery-container {
+      position: relative;
+    }
+
+    .main-image-frame {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 184, 0, 0.4);
+      background: #000;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .main-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .frame-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(13, 17, 23, 0.85);
+      border: 1px solid var(--electric-amber);
+      color: var(--electric-amber);
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .thumb-strip {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .thumb-item {
+      flex: 1;
+      height: 70px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0.6;
+      transition: all 0.25s ease;
+      background: #000;
+    }
+
+    .thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-item:hover, .thumb-item.active {
+      opacity: 1;
+      border-color: var(--electric-amber);
+      transform: translateY(-2px);
+    }
+
+    /* SEÇÃO DE DIFERENCIAIS TÉCNICOS */
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.1rem;
+      color: var(--text-white);
+      margin-bottom: 10px;
+    }
+
+    .section-title h2 span {
+      color: var(--electric-amber);
+    }
+
+    .section-title p {
+      color: var(--industrial-silver);
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .services-section, .about-section, .location-section {
+      padding: 70px 0;
+    }
+
+    .mosaic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .mosaic-card {
+      background: var(--auto-surface);
+      border: 1px solid var(--border-metallic);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .mosaic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--electric-amber);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 184, 0, 0.15);
+    }
+
+    .card-img-wrap {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .mosaic-card:hover .card-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .card-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(13, 17, 23, 0.9);
+      border-left: 3px solid var(--electric-amber);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .card-content {
+      padding: 22px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .card-content h3 {
+      font-size: 1.25rem;
+      color: var(--text-white);
+      margin-bottom: 6px;
+    }
+
+    .card-content p {
+      color: var(--industrial-silver);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .specs-list {
+      list-style: none;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .specs-list li {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .specs-list li::before {
+      content: '⚡';
+      color: var(--electric-amber);
+      font-size: 0.75rem;
+    }
+
+    /* SEÇÃO SOBRE / BANCADA DE TESTE */
+    .about-section {
+      background: linear-gradient(180deg, #10151e 0%, #0d1117 100%);
+      border-top: 1px solid var(--border-metallic);
+      border-bottom: 1px solid var(--border-metallic);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-image {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--border-metallic);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-text h2 {
+      font-size: 2.1rem;
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      color: var(--industrial-silver);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .feature-item {
+      background: var(--auto-surface);
+      border-left: 3px solid var(--electric-amber);
+      padding: 14px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .feature-item strong {
+      display: block;
+      color: var(--text-white);
+      font-size: 0.95rem;
+      font-family: 'Chakra Petch', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    .feature-item span {
+      font-size: 0.8rem;
+      color: var(--industrial-silver);
+    }
+
+    /* SEÇÃO DE LOCALIZAÇÃO E GOOGLE MAPS */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    @media (min-width: 900px) {
+      .location-grid {
+        grid-template-columns: 4.5fr 7.5fr;
+      }
+    }
+
+    .contact-card {
+      background: var(--auto-surface);
+      border: 1px solid var(--border-metallic);
+      border-radius: 14px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255, 184, 0, 0.1);
+      border: 1px solid var(--electric-amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--electric-amber);
+      font-size: 1.2rem;
+    }
+
+    .contact-info strong {
+      display: block;
+      color: var(--text-white);
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .contact-info p, .contact-info a {
+      color: var(--industrial-silver);
+      font-size: 0.9rem;
+      text-decoration: none;
+      line-height: 1.45;
+    }
+
+    .contact-info a:hover {
+      color: var(--electric-amber);
+    }
+
+    .map-frame-wrapper {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--border-metallic);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      min-height: 380px;
+      background: #000;
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #080b0e;
+      border-top: 1px solid var(--border-metallic);
+      padding: 40px 0 30px 0;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.3rem;
+      color: var(--electric-amber);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    footer p {
+      font-size: 0.88rem;
+      color: var(--industrial-silver);
+      margin-bottom: 8px;
+    }
+
+    footer .copyright {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-top: 20px;
+    }
+
+    /* BOTÃO FLUTUANTE PERMANENTE DO WHATSAPP (CANTO INFERIOR DIREITO) */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+      transition: all 0.3s ease;
+      animation: floatPulse 2.5s infinite;
+    }
+
+    .whatsapp-float:hover {
+      background: #1ebd5a;
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.7);
+      color: #ffffff;
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #ffffff;
+    }
+
+    @keyframes floatPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .whatsapp-float span {
+        display: none; /* Em telas muito pequenas mantém o ícone limpo */
+      }
+      .whatsapp-float {
+        padding: 14px;
+        border-radius: 50%;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+
+    /* RESPONSIVIDADE PARA SMARTPHONES (95% DO PÚBLICO) */
+    @media (max-width: 768px) {
+      .header-content {
+        justify-content: center;
+      }
+      .nav-menu {
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .nav-link {
+        font-size: 0.8rem;
+      }
+      h1 {
+        font-size: 1.85rem;
+      }
+      .stats-pills {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Alerta Superior de Emergência Elétrica -->
+  <div class="emergency-bar">
+    <div class="pulse-dot"></div>
+    <span>O CARRO NÃO DÁ PARTIDA? SOCORRO & ATENDIMENTO EXPRESSO EM SANTANA DE PARNAÍBA</span>
+  </div>
+
+  <!-- Cabeçalho Oficial -->
+  <header>
+    <div class="container header-content">
+      <a href="#inicio" class="brand-box">
+        <div class="brand-icon-shield">
+          <!-- Ícone Vetorial de Raio Elétrico -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffb800" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <div class="brand-title">
+          CASA DO MOTOR DE ARRANQUE
+          <span>MOTORES DE PARTIDA & ALTERNADORES</span>
+        </div>
+      </a>
+      
+      <!-- Navegação Âncora Suave -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#sobre" class="nav-link">Diferenciais</a></li>
+          <li><a href="#localizacao" class="nav-link">Localização</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero: Foco em Pane e Solução Rápida -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      
+      <!-- Lado Esquerdo: Textos de Alto Impacto -->
+      <div class="hero-info">
+        <div class="badge-electric">
+          ⚡ Especialistas em Auto Elétrico e Partida
+        </div>
+        
+        <h1>
+          Seu carro não liga? <br>
+          <span class="highlight-amber">Conserto Rápido de Motor de Partida e Alternador!</span>
+        </h1>
+        
+        <p class="lead-text">
+          Ouviu um estalo na chave ou o motor girou pesado? Conte com a <strong>Casa do Motor de Arranque</strong>. Diagnóstico imediato em bancada, peças revisadas à pronta entrega no sistema <strong>a base de troca</strong> e garantia completa em Santana de Parnaíba e região.
+        </p>
+
+        <!-- Pílulas de Confiança -->
+        <div class="stats-pills">
+          <div class="stat-pill">
+            <span class="num">6 MESES</span>
+            <span class="label">Garantia Formal</span>
+          </div>
+          <div class="stat-pill">
+            <span class="num">À PRONTA</span>
+            <span class="label">Base de Troca</span>
+          </div>
+          <div class="stat-pill">
+            <span class="num">+1000</span>
+            <span class="label">Veículos Atendidos</span>
+          </div>
+        </div>
+
+        <!-- Caixa de Ação Rápida WhatsApp -->
+        <div class="action-box">
+          <div class="action-box-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            Não fique na rua: Peça seu orçamento agora
+          </div>
+
+          <div class="urgency-alert">
+            Envie o modelo do seu carro e o ano no WhatsApp. Nós já verificamos a disponibilidade da peça pronta para você economizar tempo e guincho!
+          </div>
+
+          <a href="https://wa.me/5511975254606?text=Ol%C3%A1!%20Meu%20carro%20est%C3%A1%20com%20problema%20na%20partida%20e%20preciso%20de%20um%20or%C3%A7amento%20r%C3%A1pido." target="_blank" rel="noopener noreferrer" class="btn-wa" style="width: 100%;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.961.884 2.801.884l.004-.001c3.179 0 5.766-2.587 5.767-5.766.001-3.18-2.585-5.77-5.776-5.77zm0 10.455c-.781 0-1.637-.234-2.392-.682l-.171-.101-1.777.466.474-1.732-.111-.177c-.509-.811-.778-1.748-.777-2.736.001-2.613 2.127-4.739 4.743-4.739 2.615 0 4.742 2.126 4.743 4.739 0 2.614-2.127 4.74-4.744 4.74zm5.405-7.794c-.297-.149-1.758-.867-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            </svg>
+            Chamar no WhatsApp de Plantão
+          </a>
+        </div>
+      </div>
+
+      <!-- Lado Direito: Galeria Interativa da Peça (Flange, Bendix, Alternador) -->
+      <div class="gallery-container">
+        <div class="main-image-frame">
+          <span class="frame-badge">Peça Revisada & Testada</span>
+          <img id="mainImg" src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=900&auto=format&fit=crop" alt="Motor de Arranque em Detalhes">
+        </div>
+        
+        <!-- Faixa de Miniaturas para o Cliente Explorar -->
+        <div class="thumb-strip">
+          <div class="thumb-item active" onclick="trocarImagem('https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=900&auto=format&fit=crop', this)">
+            <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=250&auto=format&fit=crop" alt="Motor de Partida">
+          </div>
+          <div class="thumb-item" onclick="trocarImagem('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=900&auto=format&fit=crop', this)">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=250&auto=format&fit=crop" alt="Alternadores e Teste">
+          </div>
+          <div class="thumb-item" onclick="trocarImagem('https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=900&auto=format&fit=crop', this)">
+            <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=250&auto=format&fit=crop" alt="Auto Elétrico">
+          </div>
+          <div class="thumb-item" onclick="trocarImagem('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=900&auto=format&fit=crop', this)">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=250&auto=format&fit=crop" alt="Oficina">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Seção de Serviços Automotivos -->
+  <section id="servicos" class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossas Soluções em <span>Auto Elétrico</span></h2>
+        <p>Especialização cirúrgica nos dois principais componentes elétricos que colocam e mantêm seu carro rodando.</p>
+      </div>
+
+      <div class="mosaic-grid">
+        
+        <!-- Card 1: Motor de Arranque -->
+        <div class="mosaic-card">
+          <div class="card-img-wrap">
+            <span class="card-tag">Alta Demanda</span>
+            <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=500&auto=format&fit=crop" alt="Conserto de Motor de Partida">
+          </div>
+          <div class="card-content">
+            <div>
+              <h3>Motor de Partida / Arranque</h3>
+              <p>Substituição de automático (solenoide), pinhão (bêndix), troca de buchas, porta-escovas e induzido com teste de torque sob carga.</p>
+              <ul class="specs-list">
+                <li>Eliminação de barulho de dente raspando</li>
+                <li>Fim da partida pesada ou estalos no painel</li>
+                <li>Montagem e teste em bancada eletrônica</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5511975254606?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20para%20manuten%C3%A7%C3%A3o%20de%20Motor%20de%20Partida." target="_blank" rel="noopener noreferrer" class="btn-wa">
+              Cotar Motor de Partida
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Alternadores -->
+        <div class="mosaic-card">
+          <div class="card-img-wrap">
+            <span class="card-tag">Carga & Bateria</span>
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=500&auto=format&fit=crop" alt="Reparo de Alternadores">
+          </div>
+          <div class="card-content">
+            <div>
+              <h3>Revisão de Alternadores</h3>
+              <p>Reparo na placa de diodos, substituição de regulador de voltagem, rolamentos e polia livre para assegurar a carga ideal da bateria.</p>
+              <ul class="specs-list">
+                <li>Luz de bateria acesa no painel resolvida</li>
+                <li>Prevenção contra descarga súbita de bateria</li>
+                <li>Tensão estabilizada para módulos de injeção</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5511975254606?text=Ol%C3%A1!%20Preciso%20de%20revis%C3%A3o%20ou%20conserto%20no%20meu%20Alternador." target="_blank" rel="noopener noreferrer" class="btn-wa">
+              Cotar Alternador
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Base de Troca com Garantia -->
+        <div class="mosaic-card">
+          <div class="card-img-wrap">
+            <span class="card-tag">Economia & Agilidade</span>
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=500&auto=format&fit=crop" alt="Peças a Base de Troca">
+          </div>
+          <div class="card-content">
+            <div>
+              <h3>Peças à Base de Troca</h3>
+              <p>Não pode esperar a desmontagem? Traga sua peça com defeito e leve na hora uma unidade totalmente revisada e com garantia de até 6 meses.</p>
+              <ul class="specs-list">
+                <li>Economia de até 60% em relação à peça nova</li>
+                <li>Sem tempo de espera: pronta entrega</li>
+                <li>Garantia com nota e respaldo da oficina</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5511975254606?text=Ol%C3%A1!%20Quero%20saber%20se%20tem%20pe%C3%A7a%20a%20base%20de%20troca%20para%20o%20meu%20ve%C3%ADculo." target="_blank" rel="noopener noreferrer" class="btn-wa">
+              Consultar Base de Troca
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre e Bancada de Testes -->
+  <section id="sobre" class="about-section">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=700&auto=format&fit=crop" alt="Bancada de Teste Profissional">
+      </div>
+      
+      <div class="about-text">
+        <div class="badge-electric">Oficina Especializada</div>
+        <h2>Tecnologia e Precisão em <span>Santana de Parnaíba</span></h2>
+        <p>
+          Na <strong>Casa do Motor de Arranque</strong> você não depende de "adivinhação". Dispomos de bancada de testes de alta amperagem que simula com exatidão a partida real do motor à combustão e afere a corrente de carga do alternador antes da instalação no seu veículo.
+        </p>
+        
+        <div class="features-grid">
+          <div class="feature-item">
+            <strong>Diagnóstico Rápido</strong>
+            <span>Identificamos o defeito elétrico em poucos minutos.</span>
+          </div>
+          <div class="feature-item">
+            <strong>Garantia Estendida</strong>
+            <span>Até 6 meses de tranquilidade garantida para sua peça.</span>
+          </div>
+          <div class="feature-item">
+            <strong>Estoque Multimarcas</strong>
+            <span>Linha leve, utilitários, vans e veículos pesados.</span>
+          </div>
+          <div class="feature-item">
+            <strong>Foco no Cliente</strong>
+            <span>Atendimento transparente e sem cobranças indevidas.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Localização com Google Maps Embutido -->
+  <section id="localizacao" class="location-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Onde Estamos & <span>Como Chegar</span></h2>
+        <p>Fácil acesso na região metropolitana de Santana de Parnaíba. Venha direto até nós ou chame o socorro elétrico.</p>
+      </div>
+
+      <div class="location-grid">
+        
+        <!-- Cartão com Dados de Contato e Horários -->
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-info">
+              <strong>Endereço da Oficina</strong>
+              <p>Santana de Parnaíba - SP<br>Atendimento para toda a região metropolitana (Barueri, Alphaville, Cajamar e arredores).</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div class="contact-info">
+              <strong>Horário de Funcionamento</strong>
+              <p>Segunda a Sexta: 08:00 às 18:00<br>Sábado: 08:00 às 13:00</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-info">
+              <strong>Telefone & WhatsApp Direto</strong>
+              <p><a href="tel:11975254606">(11) 97525-4606</a></p>
+            </div>
+          </div>
+
+          <a href="https://maps.google.com/?q=Santana+de+Parnaiba+SP" target="_blank" rel="noopener noreferrer" class="btn-amber" style="width: 100%;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            Abrir Rota no GPS / Waze
+          </a>
+        </div>
+
+        <!-- Mapa Embutido Interativo do Google Maps -->
+        <div class="map-frame-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117112.56453912644!2d-46.96969503463994!3d-23.44754593847951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf0251789c6ec7%3A0xe21f82e88a0e9803!2sSantana%20de%20Parna%C3%ADba%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé Institucional -->
+  <footer>
+    <div class="container">
+      <div class="footer-brand">CASA DO MOTOR DE ARRANQUE</div>
+      <p>Especialistas em Motores de Partida, Alternadores, Diagnóstico Elétrico e Peças a Base de Troca.</p>
+      <p>Santana de Parnaíba - SP</p>
+      <p class="copyright">&copy; 2026 Casa do Motor de Arranque. Todos os direitos reservados. Ficha oficial Google Perfil de Empresa.</p>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante Permanente do WhatsApp com Animação -->
+  <a href="https://wa.me/5511975254606?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Casa%20do%20Motor%20de%20Arranque%20e%20preciso%20de%20ajuda%20com%20meu%20ve%C3%ADculo." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.586 1.961.884 2.801.884l.004-.001c3.179 0 5.766-2.587 5.767-5.766.001-3.18-2.585-5.77-5.776-5.77zm0 10.455c-.781 0-1.637-.234-2.392-.682l-.171-.101-1.777.466.474-1.732-.111-.177c-.509-.811-.778-1.748-.777-2.736.001-2.613 2.127-4.739 4.743-4.739 2.615 0 4.742 2.126 4.743 4.739 0 2.614-2.127 4.74-4.744 4.74zm5.405-7.794c-.297-.149-1.758-.867-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    </svg>
+    <span>Orçamento no WhatsApp</span>
+  </a>
+
+  <!-- Script para troca dinâmica de fotos e rolagem de menu -->
+  <script>
+    function trocarImagem(caminho, elemento) {
+      const imgPrincipal = document.getElementById('mainImg');
+      imgPrincipal.style.opacity = '0.2';
+      setTimeout(() => {
+        imgPrincipal.src = caminho;
+        imgPrincipal.style.opacity = '1';
+      }, 150);
+
+      const thumbs = document.querySelectorAll('.thumb-item');
+      thumbs.forEach(thumb => thumb.classList.remove('active'));
+      elemento.classList.add('active');
+    }
+
+    // Marca o link ativo da navegação de acordo com o scroll da página
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSection = 'inicio';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.pageYOffset >= sectionTop - 140) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(currentSection)) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
